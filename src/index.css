@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles untuk game */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Force landscape mode pada mobile */
+@media (orientation: portrait) {
+  .portrait-warning {
+    display: flex !important;
+  }
+  
+  .landscape-only > *:not(.portrait-warning) {
+    display: none !important;
+  }
+}
+
+/* Optimasi untuk mobile */
+.mobile-controls button {
+  touch-action: manipulation;
+  min-height: 48px;
+  min-width: 48px;
+  user-select: none;
+}
+
+/* Prevent zoom */
+* {
+  touch-action: manipulation;
+}
+
+/* Font retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.font-retro {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.font-terminal {
+  font-family: 'Courier New', monospace;
+}
+
+/* Scanlines effect */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* Retro text shadow */
+.text-retro-shadow {
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
